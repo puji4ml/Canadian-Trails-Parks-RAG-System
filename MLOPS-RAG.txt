@@ -1,0 +1,72 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Project Info  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The RAG Pipeline optimizer, The problem: every company has a RAG system.ALmost no company knows if their RAG is good. IS Chunk_size=512 better than 1024? IS cohere-v3 a better embedder than BERT for their data? They're just guessing. 
+
+The full stack Solution: 
+1) Frontend. A streamlit or react app where a user uploads their documents (eg, all of company hr policy) 
+2) Backend: A fastapi server. When the user asks a question,the backend runs 4 RAG pipelines in paralle with different chunking/embedding/reranking strategies. 
+3) AI core: An evaluater agent (using GPT-40 as a judge) that scores the outputs from all 4 pipelines on "accuracy","relevance",and cost. 
+4) Data/Infra: A dashboard that visualizes the results,showing the user: For your data pipeline C is 20% more accurate and 10% cheaper. Deployed with docker on render.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   Project SETUP  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+open folder location of project
+run "uv init" in terminal in vscode
+run "uv venv" to create environment for your project
+create file called "requirements.txt" in your folder wth necessary library
+execute "uv add -r requirements.txt" in terminal in vscode
+execute "uv add ipykernel"
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHASE1: Data ingestion pipeline ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>>>>> Data Collection
+(open file and click on play dropdown and select "run python file" in vs code in below order)
+# Step 1: Collect trails (skip if you already have the trails data)
+python scripts/collect_canada_trails_fixed.py
+
+# Step 2: Collect parks
+python scripts/collect_parks_canada_enhanced.py
+
+# Step 3: Combine everything
+python scripts/combine_canada_data.py
+
+data/processed/: final train test dataset will be present
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+>>>>>  Document Chunking/Splitting
+see dataingestion.ipynb file,
+execute all blocks one by one to setup vector_db in final block and initial test of retreiving something from db
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHASE2: Query Processing phase ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>>>>>>>> Free LLM models usage,
+see pipeline.ipynb file
+first installed the https://ollama.com/download,
+then perform in terminal of windows
+
+# Start Ollama (if not auto-started)
+ollama serve
+
+# Pull models (in another terminal)
+# Small & Fast (3B parameters, ~2GB)
+ollama pull llama3.2:3b
+
+# Better Quality (8B parameters, ~4.7GB)
+ollama pull llama3.1:8b
+
+# Check downloaded models
+ollama list
+
+#test it
+ollama run llama3.2:3b "What are the best hiking trails in Canada?"
+
+
+>> execute evaluation.ipynb file
+
+to run app.py
+1)$env:GROQ_API_KEY="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"
+2)run command in powershell of vs code inside: PS C:\Users\p3pio\OneDrive\Desktop\Machine Learning\RAG>
+uv run streamlit run app.py

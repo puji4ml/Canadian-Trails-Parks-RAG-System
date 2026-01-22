@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and ML artifacts
+data/
+datasets/
+embeddings/
+vector_db/
+vectorstore/
+chroma.sqlite3
+*.bin
+*.json
+
+# OS
+.DS_Store
+Thumbs.db

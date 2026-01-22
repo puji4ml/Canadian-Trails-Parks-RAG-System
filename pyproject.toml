@@ -1,0 +1,46 @@
+[project]
+name = "rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.75.0",
+    "beautifulsoup4>=4.14.3",
+    "chromadb>=1.4.0",
+    "cohere>=5.20.1",
+    "datasets>=4.4.2",
+    "docx2txt>=0.9",
+    "faiss-cpu>=1.13.2",
+    "hf-xet>=1.2.0",
+    "ijson>=3.4.0.post0",
+    "ipykernel>=7.1.0",
+    "jq>=1.10.0",
+    "langchain>=1.2.0",
+    "langchain-community>=0.4.1",
+    "langchain-experimental>=0.4.1",
+    "langchain-groq>=1.1.1",
+    "langchain-huggingface>=1.2.0",
+    "langchain-openai>=1.1.6",
+    "langgraph>=1.0.5",
+    "matplotlib>=3.10.8",
+    "nbformat>=5.10.4",
+    "nbimporter>=0.3.4",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.3",
+    "pdfminer>=20191125",
+    "pymupdf>=1.26.7",
+    "pypdf>=6.5.0",
+    "python-docx>=1.2.0",
+    "python-dotenv>=1.2.1",
+    "rank-bm25>=0.2.2",
+    "requests>=2.32.5",
+    "seaborn>=0.13.2",
+    "selenium>=4.39.0",
+    "sentence-transformers>=5.2.0",
+    "streamlit>=1.52.2",
+    "tiktoken>=0.12.0",
+    "unstructured>=0.18.24",
+    "wikipedia>=1.4.0",
+    "wikipedia-api>=0.8.1",
+]

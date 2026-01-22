@@ -1,0 +1,107 @@
+======================================================================
+RAG PIPELINE EVALUATION REPORT
+======================================================================
+
+Generated: 2026-01-11 12:08:26
+Pipelines Evaluated: 3
+
+======================================================================
+🏆 OVERALL RANKINGS
+======================================================================
+
+1. Ollama Speed
+   Quality Score: 0.273
+   Pass Rate: 0%
+   Avg Time: 14.01s
+
+2. Groq Fast XLarge
+   Quality Score: 0.243
+   Pass Rate: 0%
+   Avg Time: 4.55s
+
+3. Ollama quality
+   Quality Score: 0.181
+   Pass Rate: 0%
+   Avg Time: 26.87s
+
+
+======================================================================
+📊 DETAILED BREAKDOWN
+======================================================================
+
+
+Groq Fast XLarge
+----------------------------------------------------------------------
+Overall Score:        0.243
+Accuracy:             0.000
+Completeness:         0.267
+Relevance:            0.667
+Citation Quality:     0.000
+Clarity:              0.700
+Hallucination Check:  0.000
+Pass Rate:            0%
+Avg Query Time:       4.55s
+
+Category Performance:
+  Location             0.340
+  Surface Attribute    0.050
+  Accessibility        0.340
+
+Ollama quality
+----------------------------------------------------------------------
+Overall Score:        0.181
+Accuracy:             0.057
+Completeness:         0.229
+Relevance:            0.429
+Citation Quality:     0.000
+Clarity:              0.471
+Hallucination Check:  0.000
+Pass Rate:            0%
+Avg Query Time:       26.87s
+
+Category Performance:
+  Location             0.280
+  Surface Attribute    0.000
+  Accessibility        0.050
+  Activity             0.000
+  Park Information     0.470
+  Difficulty Filter    0.230
+  Multi Criteria       0.240
+
+Ollama Speed
+----------------------------------------------------------------------
+Overall Score:        0.273
+Accuracy:             0.143
+Completeness:         0.286
+Relevance:            0.457
+Citation Quality:     0.086
+Clarity:              0.657
+Hallucination Check:  0.143
+Pass Rate:            0%
+Avg Query Time:       14.01s
+
+Category Performance:
+  Location             0.360
+  Surface Attribute    0.050
+  Accessibility        0.330
+  Activity             0.050
+  Park Information     0.550
+  Difficulty Filter    0.290
+  Multi Criteria       0.280
+
+======================================================================
+💡 RECOMMENDATIONS
+======================================================================
+
+🏆 Best Quality: Ollama Speed
+   Score: 0.273
+
+⚡ Fastest: Groq Fast XLarge
+   Time: 4.55s
+
+✅ Best Pass Rate: Groq Fast XLarge
+   Rate: 0%
+
+⚖️  Recommended (Balanced): Ollama Speed
+   Balanced Score: 0.225
+   Quality: 0.273 | Time: 14.01s
