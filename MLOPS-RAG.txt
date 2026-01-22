@@ -67,6 +67,6 @@ ollama run llama3.2:3b "What are the best hiking trails in Canada?"
 >> execute evaluation.ipynb file
 
 to run app.py
-1)$env:GROQ_API_KEY="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"
+1)$env:GROQ_API_KEY="gsk_*"
 2)run command in powershell of vs code inside: PS C:\Users\p3pio\OneDrive\Desktop\Machine Learning\RAG>
 uv run streamlit run app.py
