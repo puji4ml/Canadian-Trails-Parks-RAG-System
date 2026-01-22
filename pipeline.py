@@ -17,7 +17,7 @@ from dataclasses import dataclass
 
 
 import os
-os.environ["GROQ_API_KEY"] = "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"
+os.environ["GROQ_API_KEY"] = "insert your key"
 
 
 # In[3]:
